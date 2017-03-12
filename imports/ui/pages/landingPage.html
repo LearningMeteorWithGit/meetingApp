@@ -1,0 +1,16 @@
+<template name="landingPage">
+
+  <section class="searchSection">
+    {{> searchBar}}
+  </section>
+
+{{#if currentUser}}
+  <section class="articlesSection">
+    <h1>Recent things in your area</h1>
+  </section>
+
+  <section class="userSection">
+    <h3>Your private stuff happens here</h3>
+  </section>
+{{/if}}
+</template>
