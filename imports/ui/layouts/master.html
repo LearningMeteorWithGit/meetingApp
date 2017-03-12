@@ -2,6 +2,11 @@
     <header>
         {{>headerComponent}}
     </header>
+
+    <div class="sideNav">
+        {{>Template.dynamic template=sideNav}}      
+    </div>
+
     <main>
         {{>Template.dynamic template=content}}
     </main>
