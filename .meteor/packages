@@ -37,5 +37,4 @@ kadira:flow-router
 kadira:blaze-layout
 
 # data
-aldeed:simple-schema
-aldeed:collection2
+aldeed:collection2-core@2.0.0
