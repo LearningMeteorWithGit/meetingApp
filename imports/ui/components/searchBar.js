@@ -2,10 +2,17 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
-
+import { Clubs } from '../../api/clubs/clubs.js';
 // Import the corresponding html file
 import './searchBar.html'
 
+Template.searchBar.helpers({
+  clubs() {
+    Clubs.find({});
+    console.log("message");
+  },
+  test: 'hello world',
+});
 
 Template.searchBar.events({
   'submit .searchBar__form': function searchBarForm(event) {

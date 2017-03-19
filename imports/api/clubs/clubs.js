@@ -1,11 +1,10 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
-const Clubs = new Mongo.Collection('clubs');
-export { Clubs as default };
+export const Clubs = new Mongo.Collection('clubs');
 
 Clubs.schema = new SimpleSchema({
-  clubName: {
+  name: {
     type: String,
     label: 'Club name',
     max: 200,
@@ -13,7 +12,7 @@ Clubs.schema = new SimpleSchema({
   creator: {
     type: Object,
     label: 'Club master',
-    autoValue() {
+    autoValue: function autoValueCreator() {
       return this.userId;
     },
   },
@@ -25,11 +24,17 @@ Clubs.schema = new SimpleSchema({
   createdAt: {
     type: Date,
     label: 'Created At',
-    autoValue() {
+    autoValue: function autoValueCreatedAt() {
       return new Date();
     },
   },
-    // TODO: Clubs ausformulieren
+  public: {
+    type: Boolean,
+    label: 'Public Club',
+    autoValue: function autoValuePublic() {
+      return true;
+    },
+  },
 }, {
   clean: {
     filter: true,

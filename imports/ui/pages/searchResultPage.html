@@ -1,5 +1,13 @@
 <template name="searchResultPage">
+  {{> searchBar}}
   <div class="result">
     <h1>Found groups</h1>
+      {{#each clubs}}
+      <article id="{{club.name}}">
+        {{club.name}}
+      </article>
+      {{/each}}
+      <h3>{{test}}</h3>
+      <h3>{{tester}}</h3>
   </div>
 </template>
