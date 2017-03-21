@@ -9,32 +9,32 @@ Clubs.schema = new SimpleSchema({
     label: 'Club name',
     max: 200,
   },
-  creator: {
-    type: Object,
-    label: 'Club master',
-    autoValue: function autoValueCreator() {
-      return this.userId;
-    },
-  },
-  member: {
-    type: Array,
-    label: 'Club member',
-    optional: true,
-  },
-  createdAt: {
-    type: Date,
-    label: 'Created At',
-    autoValue: function autoValueCreatedAt() {
-      return new Date();
-    },
-  },
-  public: {
-    type: Boolean,
-    label: 'Public Club',
-    autoValue: function autoValuePublic() {
-      return true;
-    },
-  },
+  // creator: {
+  //   type: Object,
+  //   label: 'Club master',
+  //   autoValue: function autoValueCreator() {
+  //     return this.userId;
+  //   },
+  // },
+  // member: {
+  //   type: Array,
+  //   label: 'Club member',
+  //   optional: true,
+  // },
+  // createdAt: {
+  //   type: Date,
+  //   label: 'Created At',
+  //   autoValue: function autoValueCreatedAt() {
+  //     return new Date();
+  //   },
+  // },
+  // public: {
+  //   type: Boolean,
+  //   label: 'Public Club',
+  //   autoValue: function autoValuePublic() {
+  //     return true;
+  //   },
+  // },
 }, {
   clean: {
     filter: true,

@@ -4,11 +4,16 @@
     {{> searchBar}}
   </section>
 
-{{#if currentUser}}
   <section class="articlesSection">
     <h1>Recent things in your area</h1>
+    {{#each articles}}
+      <article id="{{_id}}">
+        {{content}}
+      </article>
+    {{/each}}
   </section>
 
+{{#if currentUser}}
   <section class="userSection">
     <h3>Your private stuff happens here</h3>
   </section>
