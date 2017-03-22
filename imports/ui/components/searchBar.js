@@ -13,10 +13,13 @@ Template.searchBar.events({
       // Prevent default browser form submit
     event.preventDefault();
 
-    const target = event.target;
-    const text = target.searchString.value;
+// TODO Make use of these two variables when a decent search engine is present.
+    // const target = event.target;
+    // const text = target.searchString.value;
 
-    Session.set('searchString', text);
+    const searchResult = Clubs.find({}).fetch();
+    Session.set("searchResult", searchResult);
+
     FlowRouter.go('SearchResult');
   },
 });

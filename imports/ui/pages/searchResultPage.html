@@ -1,5 +1,5 @@
 <template name="searchResultPage">
-  {{> searchBar}}
+  {{> searchBar }}
   <div class="result">
     <h1>Found groups</h1>
       {{#each clubs}}
@@ -11,6 +11,6 @@
   <div class="createNewClub">
     <h6>No Club found?</h6>
     <h6>Make one !</h6>
-    {{!-- TODO Make the actual form --}}
+    {{> quickForm collection=clubCollection id="insertClubsForm" type="insert" class="newClubForm"}}
   </div>
 </template>

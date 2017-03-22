@@ -3,6 +3,10 @@ html{
   background-color: grey;
 }
 
+.mainContent{
+  text-align: center;
+}
+
 .searchSection{}
 
 .articlesSection{}

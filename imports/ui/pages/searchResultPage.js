@@ -4,14 +4,14 @@ import { Session } from 'meteor/session';
 import { Clubs } from '../../api/clubs/clubs';
 
 import './searchResultPage.html';
+
 Template.searchResultPage.helpers({
   clubs(){
-    // TODO: Implement SearchCluster or stuff based on searchString
-    console.log(Session.get('searchString'));
-
-    return Clubs.find({});
-
+    return Session.get('searchResult');
   },
+  clubCollection(){
+    return Clubs;
+  }
 });
 
 Template.searchResultPage.helpers({
