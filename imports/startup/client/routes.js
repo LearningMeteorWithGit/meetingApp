@@ -6,11 +6,12 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 import '../../ui/layouts/master';
 
 // Import Pages
-import '../../ui/pages/landingPage';
-import '../../ui/pages/searchResultPage';
+import '../../ui/pages/landingPage/landingPage';
+import '../../ui/pages/searchResult/searchResultPage';
+import '../../ui/pages/member/memberContent';
 
 // Import components
-import '../../ui/components/sideNav';
+import '../../ui/components/navigation/sideNav';
 
 FlowRouter.route('/', {
   name: 'LandingPage',
@@ -23,5 +24,12 @@ FlowRouter.route('/searchResult', {
   name: 'SearchResult',
   action() {
     BlazeLayout.render('master', { content: 'searchResultPage', sideNav: 'sideNav' });
+  },
+});
+
+FlowRouter.route('/member', {
+  name: 'Member',
+  action() {
+    BlazeLayout.render('master', { content: 'memberContent', sideNav: 'sideNav' });
   },
 });

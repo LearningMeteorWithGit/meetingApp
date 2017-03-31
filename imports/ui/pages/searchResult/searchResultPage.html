@@ -8,9 +8,12 @@
       </article>
       {{/each}}
   </div>
+
+  {{#unless clubs }}
   <div class="createNewClub">
     <h6>No Club found?</h6>
     <h6>Make one !</h6>
-    {{> quickForm collection=clubCollection id="insertClubsForm" type="insert" class="newClubForm"}}
+    {{> newClub}}
   </div>
+  {{/unless}}
 </template>

@@ -2,5 +2,5 @@
 import './master.html';
 
 // Import necessary components
-import '../components/headerComponent';
-import '../components/footerComponent';
+import '../components/layout/headerComponent';
+import '../components/layout/footerComponent';

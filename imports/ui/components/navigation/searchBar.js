@@ -2,10 +2,10 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
-import { Clubs } from '../../api/clubs/clubs.js';
+import { Clubs } from '../../../api/clubs/clubs';
 import { Session } from 'meteor/session';
 // Import the corresponding html file
-import './searchBar.html'
+import './searchBar.html';
 
 
 Template.searchBar.events({
@@ -17,7 +17,7 @@ Template.searchBar.events({
     // const target = event.target;
     // const text = target.searchString.value;
 
-    const searchResult = Clubs.find({}).fetch();
+    const searchResult = Clubs.find().fetch();
     Session.set("searchResult", searchResult);
 
     FlowRouter.go('SearchResult');
