@@ -17,21 +17,6 @@ Clubs.Schema = new SimpleSchema({
     label: 'Description of your club',
     max: 1000,
   },
-  creator: {
-    type: Object,
-    label: 'Club master',
-    autoValue: function autoValueCreator() {
-      return this.userId;
-    },
-    autoform: {
-      type: 'hidden'
-    },
-  },
-  // member: {
-  //   type: Array,
-  //   label: 'Club member',
-  //   optional: true,
-  // },
   createdAt: {
     type: Date,
     label: 'Created At',
@@ -51,9 +36,8 @@ Clubs.Schema = new SimpleSchema({
     autoform: {
       type: 'hidden'
     },
-  }
+  },
 });
-
 // }, {
 //   clean: {
 //     filter: true,
@@ -63,5 +47,6 @@ Clubs.Schema = new SimpleSchema({
 //     getAutoValues: true,
 //     removeNullsFromArrays: true,
 //   },
+
 
 Clubs.attachSchema(Clubs.Schema);

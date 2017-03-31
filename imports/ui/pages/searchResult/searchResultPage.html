@@ -4,16 +4,17 @@
     <h1>Found groups</h1>
       {{#each clubs}}
       <article id="{{_id}}">
-        {{name}}
+        <h3>{{name}}</h3>
+        <p>{{description}}</p>
       </article>
       {{/each}}
   </div>
 
   {{#unless clubs }}
-  <div class="createNewClub">
-    <h6>No Club found?</h6>
-    <h6>Make one !</h6>
-    {{> newClub}}
-  </div>
+    <div class="createNewClub">
+      <h6>No Club found?</h6>
+      <h6>Make one !</h6>
+      {{> newClub}}
+    </div>
   {{/unless}}
 </template>
