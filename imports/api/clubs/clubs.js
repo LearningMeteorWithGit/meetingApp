@@ -37,16 +37,15 @@ Clubs.Schema = new SimpleSchema({
       type: 'hidden'
     },
   },
+}, {
+  clean: {
+    filter: true,
+    autoConvert: true,
+    removeEmptyStrings: true,
+    trimStrings: true,
+    getAutoValues: true,
+    removeNullsFromArrays: true,
+  },
 });
-// }, {
-//   clean: {
-//     filter: true,
-//     autoConvert: true,
-//     removeEmptyStrings: true,
-//     trimStrings: true,
-//     getAutoValues: true,
-//     removeNullsFromArrays: true,
-//   },
-
 
 Clubs.attachSchema(Clubs.Schema);

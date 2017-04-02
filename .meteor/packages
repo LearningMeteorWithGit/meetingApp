@@ -19,8 +19,11 @@ ecmascript@0.6.3              # Enable ECMAScript2015+ syntax in app code
 shell-server@0.2.3            # Server-side component of the `meteor shell` command
 
 
-insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
+#insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
+#autopublish
 
+#Meteor "Internal" Packages
+session
 
 # i18n
 tap:i18n
@@ -41,6 +44,4 @@ kadira:blaze-layout
 # data
 aldeed:collection2-core@2.0.0
 meteortoys:allthings
-autopublish
-session
 aldeed:autoform
