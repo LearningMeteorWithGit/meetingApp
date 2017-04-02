@@ -8,6 +8,12 @@ import { Session } from 'meteor/session';
 import './searchBar.html';
 
 
+Template.searchBar.onCreated = function(){
+  this.autorun(() => {
+    this.subscribe('clubs.public');
+  });
+};
+
 Template.searchBar.events({
   'submit .searchBar__form'(event, instance) {
       // Prevent default browser form submit
