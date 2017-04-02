@@ -4,6 +4,9 @@
     {{> searchBar}}
   </section>
 
+  {{> loginButtons}}
+
+
   <section class="articlesSection">
     <h1>Recent things in your area</h1>
     {{#each articles}}
@@ -15,7 +18,7 @@
 
 {{#if currentUser}}
   <section class="userSection">
-    <h3>Your private stuff happens here</h3>
+    <h3>Hello {{currentUser.username}}! Your private stuff happens here</h3>
   </section>
 {{/if}}
 </template>

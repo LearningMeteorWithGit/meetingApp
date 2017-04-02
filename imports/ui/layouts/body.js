@@ -1,5 +1,5 @@
 // Import corresponding html
-import './master.html';
+import './body.html';
 
 // Import necessary components
 import '../components/layout/headerComponent';
