@@ -29,11 +29,13 @@ session
 tap:i18n
 
 # accounts
-accounts-password@1.3.4
+accounts-ui
+accounts-password
+
 useraccounts:core
 useraccounts:unstyled
-useraccounts:flow-routing
-softwarerero:accounts-t9n
+#useraccounts:flow-routing
+#softwarerero:accounts-t9n
 
 # routing
 kadira:flow-router
