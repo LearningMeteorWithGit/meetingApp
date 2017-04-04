@@ -8,23 +8,15 @@ import { Session } from 'meteor/session';
 import './searchBar.html';
 
 
-Template.searchBar.onCreated = function(){
-  this.autorun(() => {
-    this.subscribe('clubs.public');
-  });
-};
-
 Template.searchBar.events({
   'submit .searchBar__form'(event, instance) {
       // Prevent default browser form submit
     event.preventDefault();
 
-// TODO Make use of these two variables when a decent search engine is present.
-    // const target = event.target;
-    // const text = target.searchString.value;
+    const target = event.target;
+    const searchString = target.searchString.value;
 
-    const searchResult = Clubs.find().fetch();
-    Session.set("searchResult", searchResult);
+    Session.set("searchString", searchString);
 
     FlowRouter.go('SearchResult');
   },
