@@ -48,4 +48,6 @@ Clubs.Schema = new SimpleSchema({
   },
 });
 
+console.log(Clubs.find().count());
+
 Clubs.attachSchema(Clubs.Schema);

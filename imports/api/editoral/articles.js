@@ -15,4 +15,7 @@ Articles.schema = new SimpleSchema({
   // TODO More distinguish*y is needed.
 });
 
+console.log(Articles.find().fetch());
+
+
 Articles.attachSchema(Articles.schema);
