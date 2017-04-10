@@ -8,6 +8,7 @@ import './searchResultPage.html'
 import '../../components/functional/newClub';
 
 Template.searchResultPage.onCreated = function(){
+
 this.getSearchResult = () => Session.get('searchString');
   this.autorun(() => {
     this.subscribe('clubs.byName', this.getSearchResult());

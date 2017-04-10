@@ -1,6 +1,8 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
+SimpleSchema.extendOptions(['autoform']);
+
 export const Articles = new Mongo.Collection('articles');
 
 Articles.schema = new SimpleSchema({
