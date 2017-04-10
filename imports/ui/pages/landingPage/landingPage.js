@@ -12,5 +12,8 @@ Template.landingPage.onCreated = function(){
 Template.landingPage.helpers({
   articles(){
     Articles.find({});
+  },
+  articleCollection(){
+    return Articles;
   }
 });

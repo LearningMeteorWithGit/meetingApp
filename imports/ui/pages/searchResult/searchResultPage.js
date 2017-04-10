@@ -8,11 +8,16 @@ import './searchResultPage.html'
 import '../../components/functional/newClub';
 
 Template.searchResultPage.onCreated = function(){
-  const handle = Meteor.subscribe('clubs.public');
+
+this.getSearchResult = () => Session.get('searchString');
+  this.autorun(() => {
+    this.subscribe('clubs.byName', this.getSearchResult());
+  });
 };
 
 Template.searchResultPage.helpers({
   clubs(){
-    return Session.get('searchResult');
+    return Clubs.find({}).fetch();
+
   },
 });
