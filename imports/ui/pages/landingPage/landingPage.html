@@ -6,19 +6,24 @@
 
   {{> loginButtons}}
 
-
-  <section class="articlesSection">
-    <h1>Recent things in your area</h1>
-    {{#each articles}}
-      <article id="{{_id}}">
-        {{content}}
-      </article>
-    {{/each}}
-  </section>
-
 {{#if currentUser}}
   <section class="userSection">
     <h3>Hello {{currentUser.username}}! Your private stuff happens here</h3>
   </section>
 {{/if}}
+
+<section class="articlesSection">
+  {{#each articles}}
+  {{> article}}
+{{/each}}
+</section>
+
+</template>
+
+<template name="article">
+  <ul>
+  <li>
+    {{title}}
+  </li>
+</ul>
 </template>

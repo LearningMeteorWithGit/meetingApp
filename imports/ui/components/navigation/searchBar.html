@@ -1,8 +1,23 @@
 <template name="searchBar">
   <div class="searchBar">
-    <form class="searchBar__form">
-      <input type="text" name="searchString" class="searchBar__input" placeholder="Search...">
-      <input type="submit" class="searchBar__button" value="Search">
+    <form class="searchBarForm">
+      <input type="text" name="searchBar" class="searchBarInput" placeholder="Search...">
+      //<input type="submit" class="searchButton" value="Search">
     </form>
   </div>
+
+  <ul class="list-group">
+    {{#if searching}}
+      {{> loading}}
+    {{else}}
+      {{#each albums}}
+        <li class="list-group-item clearfix">
+          <span class="pull-left">{{title}} by <strong>{{artist}}</strong></span>
+          <span class="pull-right">{{year}}</span>
+        </li>
+      {{else}}
+        <p class="alert alert-warning">Nothing found for {{query}}. Sorry, bub.</p>
+      {{/each}}
+    {{/if}}
+  </ul>
 </template>

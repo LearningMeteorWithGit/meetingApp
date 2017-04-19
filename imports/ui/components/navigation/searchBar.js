@@ -8,16 +8,61 @@ import { Session } from 'meteor/session';
 import './searchBar.html';
 
 
+// Template.searchBar.events({
+//   'submit .searchBarForm'(event, instance) {
+//       // Prevent default browser form submit
+//     event.preventDefault();
+//
+//     const target = event.target;
+//     const searchString = target.searchString.value;
+//
+//     Session.set("searchString", searchString);
+//
+//     FlowRouter.go('SearchResult');
+//   },
+// });
+
+Template.searchBar.onCreated( () => {
+  let template = Template.instance();
+
+  template.searchQuery = new ReactiveVar();
+  template.searching   = new ReactiveVar( false );
+
+  template.autorun( () => {
+    template.subscribe( 'clubs', template.searchQuery.get(), () => {
+      setTimeout( () => {
+        template.searching.set( false );
+      }, 300 );
+    });
+  });
+});
+
 Template.searchBar.events({
-  'submit .searchBar__form'(event, instance) {
-      // Prevent default browser form submit
-    event.preventDefault();
+  'keyup [name="searchBar"]' ( event, template ) {
+    let value = event.target.value.trim();
 
-    const target = event.target;
-    const searchString = target.searchString.value;
+    if ( value !== '' && event.keyCode === 13 ) {
+      template.searchQuery.set( value );
+      template.searching.set( true );
+    }
 
-    Session.set("searchString", searchString);
+    if ( value === '' ) {
+      template.searchQuery.set( value );
+    }
+  }
+});
 
-    FlowRouter.go('SearchResult');
+Template.searchBar.helpers({
+  searching() {
+    return Template.instance().searching.get();
   },
+  query() {
+    return Template.instance().searchQuery.get();
+  },
+  clubs() {
+    let clubs = Clubs.find();
+    if ( clubs ) {
+      return clubs;
+    }
+  }
 });

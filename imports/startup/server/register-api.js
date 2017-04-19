@@ -1,2 +1,2 @@
 import '../../api/clubs/server/publications';
-import '../../api/editoral/server/publications';
+import '../../api/editorial/server/publications';
