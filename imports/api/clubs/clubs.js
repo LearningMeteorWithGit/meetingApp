@@ -1,7 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
-// TODO Comment in if necessary until then hint that this option exist.
 SimpleSchema.extendOptions(['autoform']);
 
 export const Clubs = new Mongo.Collection('clubs');
