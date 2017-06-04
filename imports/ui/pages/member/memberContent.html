@@ -1,3 +1,14 @@
 <template name="memberContent">
-  <h1>Hallo {{username}}</h1>
+
+<div class="memberContent_main">
+  <section class="memberContent_groups">
+    Here are your groups
+    <ul class="groups_list">
+      {{#each clubs}}
+        <li>{{name}}</li>
+      {{/each}}
+    </ul>
+  </section>
+</div>
+
 </template>
