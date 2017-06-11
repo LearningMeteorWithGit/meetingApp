@@ -16,3 +16,9 @@
 .groups_list li {
   border: 1px dotted;
 }
+
+.memberContent_newGroup{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}

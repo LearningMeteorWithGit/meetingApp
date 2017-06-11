@@ -30,7 +30,7 @@ Clubs.Schema = new SimpleSchema({
     type: Boolean,
     label: 'Public Club',
     autoValue: function autoValuePublic() {
-      return true;
+      return this.userId ? false : true;
     },
     autoform: {
       type: 'hidden'
