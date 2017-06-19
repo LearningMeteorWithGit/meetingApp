@@ -9,21 +9,28 @@ import '../../components/functional/newClub';
 
 Template.memberContent.onCreated(function(){
   this.state = new ReactiveDict();
-  this.subscribe('privateClubs');
+  this.state.setDefault('createNewGroup', false);
+  this.autorun(() => {
+    this.subscribe('clubs.private');
+  });
 })
 
 Template.memberContent.helpers({
   clubs(){
-    return Clubs.find();
+    return Clubs.find({public : false});
   },
-  wantNewGroup(){
+  createNewGroup(){
     const template = Template.instance();
-    return template.state.get('wantNewGroup');
+    return template.state.get('createNewGroup');
   }
 });
 
 Template.memberContent.events({
-  "click .memberContent_addNewGroup": function(event, template){
-    template.state.set('wantNewGroup', true);
+  'click .memberContent_addNewGroup': function(event, template){
+    if(template.state.get('createNewGroup')){
+      template.state.set('createNewGroup', false);
+    }else {
+      template.state.set('createNewGroup', true);
+    }
   }
 });

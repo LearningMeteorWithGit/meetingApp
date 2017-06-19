@@ -29,8 +29,16 @@ Clubs.Schema = new SimpleSchema({
   public: {
     type: Boolean,
     label: 'Public Club',
-    autoValue: function autoValuePublic() {
-      return this.userId ? false : true;
+    defaultValue: false,
+    autoform: {
+      type: 'hidden'
+    },
+  },
+  creator: {
+    type: String,
+    label: 'Creator of this group',
+    autoValue: function thisUser() {
+      return this.userId;
     },
     autoform: {
       type: 'hidden'
