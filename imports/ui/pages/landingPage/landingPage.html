@@ -1,7 +1,7 @@
 <template name="landingPage">
 
   <section class="searchSection">
-    {{> searchBar}}
+    {{> search}}
   </section>
 
   {{> loginButtons}}
@@ -12,18 +12,5 @@
   </section>
 {{/if}}
 
-<section class="articlesSection">
-  {{#each articles}}
-  {{> article}}
-{{/each}}
-</section>
 
-</template>
-
-<template name="article">
-  <ul>
-  <li>
-    {{title}}
-  </li>
-</ul>
 </template>

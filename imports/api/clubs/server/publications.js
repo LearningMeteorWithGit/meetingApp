@@ -8,15 +8,15 @@ Meteor.publish('clubs.byName', function listClubsByName(name){
   return Clubs.find({"name":name});
 });
 
-
-Meteor.publish( 'clubs', function( searchBar ) {
+/*
+Meteor.publish( 'clubs', function( search ) {
   // let query      = {},
   //     projection = { limit: 10, sort: { name: 1 } };
 
   let query = {};
 
-  if ( searchBar ) {
-    let regex = new RegExp( searchBar, 'i' );
+  if ( search ) {
+    let regex = new RegExp( search, 'i' );
 
     query = {
       $or: [
@@ -38,3 +38,4 @@ Meteor.publish( 'clubs', function( searchBar ) {
 // Meteor.publish('clubs', function(){
 //   return Clubs.find();
 // });
+*/
