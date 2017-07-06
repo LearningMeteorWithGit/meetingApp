@@ -4,6 +4,7 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { ReactiveVar } from 'meteor/reactive-var'
 import { Template } from 'meteor/templating';
 
+
 import '../../components/functional/newClub';
 
 

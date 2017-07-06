@@ -14,3 +14,8 @@ Meteor.publish("clubs.private", function listsPrivate(){
   let isPrivate = !this.userId ? true : false;
   return Clubs.find({public: isPrivate});
 });
+
+Meteor.publish("club.chatroom", function goIntoChatroom(chatroomId){
+  return Clubs.findOne({_id:chatroomId});
+
+});
