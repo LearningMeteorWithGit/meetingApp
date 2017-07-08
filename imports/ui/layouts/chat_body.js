@@ -1,5 +1,5 @@
 // Import corresponding html
-import './body.html';
+import './chat_body.html';
 
 
 // Import necessary components

@@ -1,0 +1,30 @@
+.clubChat__header{
+  text-decoration: underline;
+}
+
+.clubChat__content{
+  height: 100%;
+  position: relative;
+}
+
+.clubChat__conversation{
+  margin: 5px;
+  border-style: solid;
+  height: 85%;
+}
+
+.clubChat__message-bar{
+  border-top-style: solid;
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+}
+
+.clubChat__input{
+  width: 100%;
+  float: right;
+}
+
+.clubChat__input input{
+  width: 95%;
+}

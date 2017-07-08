@@ -4,6 +4,7 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
 // Import Layout
 import '../../ui/layouts/body';
+import '../../ui/layouts/chat_body';
 
 // Import Pages
 import '../../ui/pages/landingPage/landingPage';
@@ -38,6 +39,6 @@ FlowRouter.route('/member', {
 FlowRouter.route('/club/:_id', {
   name: 'Club',
   action(params, queryParams){
-    BlazeLayout.render('master', {content: 'clubChat', sideNav: 'sideNav'})
+    BlazeLayout.render('chat_master', {content: 'clubChat'})
   }
 })
