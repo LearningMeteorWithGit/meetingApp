@@ -1,7 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
-// TODO Comment in if necessary until then hint that this option exist.
 SimpleSchema.extendOptions(['autoform']);
 
 export const Clubs = new Mongo.Collection('clubs');
@@ -30,8 +29,16 @@ Clubs.Schema = new SimpleSchema({
   public: {
     type: Boolean,
     label: 'Public Club',
-    autoValue: function autoValuePublic() {
-      return true;
+    defaultValue: false,
+    autoform: {
+      type: 'hidden'
+    },
+  },
+  creator: {
+    type: String,
+    label: 'Creator of this group',
+    autoValue: function thisUser() {
+      return this.userId;
     },
     autoform: {
       type: 'hidden'

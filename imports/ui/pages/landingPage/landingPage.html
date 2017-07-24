@@ -13,17 +13,13 @@
 {{/if}}
 
 <section class="articlesSection">
+  <ul>
   {{#each articles}}
-  {{> article}}
+    <li>
+      {{title}}
+    </li>
 {{/each}}
+</ul>
 </section>
 
-</template>
-
-<template name="article">
-  <ul>
-  <li>
-    {{title}}
-  </li>
-</ul>
 </template>
