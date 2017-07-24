@@ -16,10 +16,12 @@ import '../../components/navigation/search';
 Template.landingPage.onCreated(function bodyOnCreated() {
   this.state = new ReactiveDict();
   this.subscribe('articles');
+  console.log("-----------------TEST: ");
 });
 
 Template.landingPage.helpers({
   articles() {
+
 //    return Articles.find();
     return Articles.find({});
 

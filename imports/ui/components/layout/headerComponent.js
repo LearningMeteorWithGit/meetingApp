@@ -1,1 +1,2 @@
-import './headerComponent.html'
+import './headerComponent.html';
+import '../navigation/search.html';

@@ -10,7 +10,7 @@ import '../../ui/pages/landingPage/landingPage';
 import '../../ui/pages/member/memberContent';
 
 // Import components
-import '../../ui/components/navigation/sideNav';
+//import '../../ui/components/navigation/sideNav';
 import '../../ui/components/navigation/search';
 
 
