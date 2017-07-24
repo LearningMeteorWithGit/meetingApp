@@ -1,0 +1,22 @@
+.chat__header{
+  border-style: dotted;
+  width: 99%;
+  margin-left: 5px;
+}
+
+.chat__main{
+  border-style: dotted;
+  margin: 5%;
+  padding: 10px;
+  /* TODO: Make % work */
+  /*min-height: 50%;*/
+  height: 700px;
+}
+
+.chat__footer{
+  border-style: dotted;
+  position: fixed;
+  bottom: 0;
+  width: 99%;
+  margin-left: 5px;
+}

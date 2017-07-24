@@ -29,7 +29,6 @@ session
 tap:i18n
 
 # accounts
-accounts-ui
 accounts-password
 
 #useraccounts:flow-routing
@@ -43,3 +42,5 @@ kadira:blaze-layout
 aldeed:collection2-core@2.0.0
 meteortoys:allthings
 aldeed:autoform
+check
+accounts-ui-unstyled

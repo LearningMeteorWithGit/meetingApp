@@ -1,3 +1,27 @@
 <template name="memberContent">
-  <h1>Hallo {{username}}</h1>
+
+<div class="memberContent_main">
+  <section class="memberContent_groups">
+    Here are your groups
+    <ul class="groups_list">
+      {{#each clubs}}
+        <li>
+            <div title="{{description}}">
+              <a href="/club/{{_id}}">{{name}}</a>
+            </div>
+        </li>
+      {{/each}}
+    </ul>
+  </section>
+</div>
+
+<div class="memberContent_newGroup">
+
+  <button class="memberContent_addNewGroup">New private group</button>
+  {{#if createNewGroup}}
+    {{> newClub}}
+  {{/if}}
+
+</div>
+
 </template>

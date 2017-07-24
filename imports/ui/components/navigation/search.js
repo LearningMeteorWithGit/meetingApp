@@ -3,9 +3,11 @@ import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Clubs } from '../../../api/clubs/clubs';
+import { Articles } from '../../../api/editorial/articles';
+
 import { Session } from 'meteor/session';
 // Import the corresponding html file
-import './searchBar.html';
+import './search.html';
 
 
 // Template.searchBar.events({
@@ -22,14 +24,14 @@ import './searchBar.html';
 //   },
 // });
 
-Template.searchBar.onCreated( () => {
+Template.search.onCreated( () => {
   let template = Template.instance();
 
   template.searchQuery = new ReactiveVar();
   template.searching   = new ReactiveVar( false );
 
   template.autorun( () => {
-    template.subscribe( 'clubs', template.searchQuery.get(), () => {
+    template.subscribe( 'articles', template.searchQuery.get(), () => {
       setTimeout( () => {
         template.searching.set( false );
       }, 300 );
@@ -37,9 +39,11 @@ Template.searchBar.onCreated( () => {
   });
 });
 
-Template.searchBar.events({
-  'keyup [name="searchBar"]' ( event, template ) {
+Template.search.events({
+  'keyup [name="search"]' ( event, template ) {
     let value = event.target.value.trim();
+
+    console.log("-----------------suchquery: " + value);
 
     if ( value !== '' && event.keyCode === 13 ) {
       template.searchQuery.set( value );
@@ -52,17 +56,17 @@ Template.searchBar.events({
   }
 });
 
-Template.searchBar.helpers({
+Template.search.helpers({
   searching() {
     return Template.instance().searching.get();
   },
   query() {
     return Template.instance().searchQuery.get();
   },
-  clubs() {
-    let clubs = Clubs.find();
-    if ( clubs ) {
-      return clubs;
+  articles() {
+    let articles = Articles.find();
+    if ( articles ) {
+      return articles;
     }
   }
 });
