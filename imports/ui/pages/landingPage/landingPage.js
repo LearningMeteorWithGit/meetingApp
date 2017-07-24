@@ -4,7 +4,7 @@ import { Articles } from '../../../api/editorial/articles';
 import { ReactiveDict } from 'meteor/reactive-dict';
 
 import './landingPage.html';
-import '../../components/navigation/searchBar';
+import '../../components/navigation/search';
 
 // Template.landingPage.onCreated = function(){
 //   Meteor.subscribe("articles");
@@ -16,10 +16,12 @@ import '../../components/navigation/searchBar';
 Template.landingPage.onCreated(function bodyOnCreated() {
   this.state = new ReactiveDict();
   this.subscribe('articles');
+  console.log("-----------------TEST: ");
 });
 
 Template.landingPage.helpers({
   articles() {
+
 //    return Articles.find();
     return Articles.find({});
 
@@ -28,20 +30,3 @@ Template.landingPage.helpers({
   //   return Articles;
   // }
 });
-
-
-
-// Template.body.helpers({
-//   tasks() {
-//     const instance = Template.instance();
-//     if (instance.state.get('hideCompleted')) {
-//       // If hide completed is checked, filter tasks
-//       return Tasks.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
-//     }
-//     // Otherwise, return all of the tasks
-//     return Tasks.find({}, { sort: { createdAt: -1 } });
-//   },
-//   incompleteCount() {
-//     return Tasks.find({checked: { $ne: true }}).count();
-//   }
-// });

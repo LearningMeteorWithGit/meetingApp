@@ -5,14 +5,18 @@ SimpleSchema.extendOptions(['autoform']);
 
 export const Articles = new Mongo.Collection('articles');
 
+if ( Meteor.isServer ) {
+  Articles._ensureIndex( { title: 1, content: 1 } );
+}
+
 Articles.schema = new SimpleSchema({
-  title: {
+  'title': {
     type: String,
-    label: 'Article title',
+    label: 'Articles title',
   },
-  content: {
+  'content': {
     type: String,
-    label: 'Article Content',
+    label: 'Articles Content',
   },
   // TODO More distinguish*y is needed.
 });
