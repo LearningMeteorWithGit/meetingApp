@@ -1,41 +1,21 @@
-//import { Meteor } from 'meteor/meteor';
+import { Meteor } from 'meteor/meteor';
 import { Clubs } from '../clubs';
-Meteor.publish('clubs.public', function listPublicClubs() {
-  return Clubs.find({'public': true});
+
+Meteor.publish("clubs.public", function(){
+  return Clubs.find({"public":true});
+
 });
 
-Meteor.publish('clubs.byName', function listClubsByName(name){
-  return Clubs.find({"name":name});
+
+Meteor.publish("clubs.private", function listsPrivate(){
+  // if (!this.userId) {
+  //    return this.ready();
+  //  }
+  let isPrivate = !this.userId ? true : false;
+  return Clubs.find({public: isPrivate});
 });
 
-/*
-Meteor.publish( 'clubs', function( search ) {
-  // let query      = {},
-  //     projection = { limit: 10, sort: { name: 1 } };
+Meteor.publish("club.chatroom", function goIntoChatroom(chatroomId){
+  return Clubs.findOne({_id:chatroomId});
 
-  let query = {};
-
-  if ( search ) {
-    let regex = new RegExp( search, 'i' );
-
-    query = {
-      $or: [
-        { name: regex },
-        { description: regex },
-        { createdAt: regex }
-      ]
-    };
-
-  //  projection.limit = 100;
-  }
-
-  let query3 = Clubs.find(query);
-
-  console.log("------------------------- " + JSON.stringify(query3));
-
-  return Clubs.find( query );
 });
-// Meteor.publish('clubs', function(){
-//   return Clubs.find();
-// });
-*/

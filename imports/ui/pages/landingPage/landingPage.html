@@ -4,7 +4,20 @@
     {{> search}}
   </section>
 
+{{#if currentUser}}
+  <section class="userSection">
+    <h3>Hello {{currentUser.username}}! Your private stuff happens here</h3>
+  </section>
+{{/if}}
 
-
+<section class="articlesSection">
+  <ul>
+  {{#each articles}}
+    <li>
+      {{title}}
+    </li>
+{{/each}}
+</ul>
+</section>
 
 </template>
