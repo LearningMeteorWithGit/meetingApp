@@ -1,16 +1,22 @@
 import './clubChat.html'
 
-import { Clubs } from '../../../api/clubs/clubs';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { ReactiveVar } from 'meteor/reactive-var'
 import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
+
+import { Clubs } from '../../../api/clubs/clubs';
+import { Nachrichten } from '../../../api/nachrichten/nachrichten';
+
+import '../../components/functional/talkBar';
+
 
 Template.clubChat.onCreated(function() {
   this.state = new ReactiveDict();
   this.getChatroomId = () => FlowRouter.getParam('_id');
   this.autorun(() => {
     this.subscribe('club.chatroom', {chatroomId: this.getChatroomId()});
+    this.subscribe('messages', {chatroomId: this.getChatroomId()});
   });
 })
 
@@ -20,6 +26,22 @@ Template.clubChat.helpers({
     const instance = Template.instance();
     const clubId = instance.getChatroomId();
     return Clubs.findOne(clubId);
+  },
+  messages(){
+    const instance = Template.instance();
+    const clubId = instance.getChatroomId();
+    return Nachrichten.find({"chatroomId":instance.getChatroomId()});
 
   }
 });
+
+// Template.clubChat.events({
+//   'submit .clubChat__input'(event){
+//     event.preventDefault();
+//     const target = event.target;
+//     const text = target.message_Bar.value;
+//
+//     console.log(text);
+//
+//   }
+// });

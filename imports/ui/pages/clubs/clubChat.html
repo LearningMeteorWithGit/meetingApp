@@ -1,19 +1,32 @@
 <template name="clubChat">
   <div class="clubChat__content">
     <header class="clubChat__header">
+      <span>{{_ 'appNav.back'}}</span>
       <h2>{{club.name}}</h2>
     </header>
 
     <div class="clubChat__conversation">
       <div class="clubChat__message">
-
+        {{#each messages}}
+          {{#if userName eq currentUser.username}}
+            <div class="clubChat_myMessage">
+              <div class="clubChat_messageContent">
+              {{content}}
+              </div>
+            </div>
+            {{else}}
+            <div class="clubChat_theirMessage">
+              <div class="clubChat_senderName">
+                {{userName}}
+              </div>
+              <div class="clubChat_messageContent">
+                {{content}}
+              </div>
+            </div>
+          {{/if}}
+        {{/each}}
       </div>
     </div>
-      <div class="clubChat__message-bar">
-        <div class="clubChat__input">
-          <input type="text" name="message-bar">
-          <button type="button" name="send-message">Send</button>
-        </div>
-      </div>
+      {{> afType_talkBar}}
   </div>
 </template>

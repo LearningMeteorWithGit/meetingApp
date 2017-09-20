@@ -1,0 +1,21 @@
+<template name="afType_talkBar">
+  {{#autoform schema=Schema.Nachrichten id="sendMessageForm" type="insert"}}
+  <fieldset class="clubChat__input">
+    <div class="clubChat__message-bar">
+        {{> afQuickField name='chatroomId'}}
+        {{> afQuickField name='userName'}}
+        <div class="form-group{{#if afFieldIsInvalid name='content'}} has-error{{/if}}">
+              <div class="input-group">
+                <span class="input-group-addon">$</span>
+                {{> afFieldInput name='content'}}
+                <span class="input-group-addon">/each</span>
+              </div>
+              {{#if afFieldIsInvalid name='content'}}
+              <span class="help-block">{{afFieldMessage name='content'}}</span>
+              {{/if}}
+        </div>
+        <input type="submit" value="{{_ 'chatAction.send'}}">
+    </div>
+  </fieldset>
+  {{/autoform}}
+</template>

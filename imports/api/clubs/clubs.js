@@ -5,7 +5,9 @@ SimpleSchema.extendOptions(['autoform']);
 
 export const Clubs = new Mongo.Collection('clubs');
 
-Clubs.Schema = new SimpleSchema({
+Schema = {};
+
+Schema.Clubs = new SimpleSchema({
   name: {
     type: String,
     label: 'Club name',
@@ -55,4 +57,4 @@ Clubs.Schema = new SimpleSchema({
   },
 });
 
-Clubs.attachSchema(Clubs.Schema);
+Clubs.attachSchema(Schema.Clubs);

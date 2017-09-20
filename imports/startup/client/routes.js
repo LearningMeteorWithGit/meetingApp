@@ -19,14 +19,14 @@ import '../../ui/components/navigation/search';
 FlowRouter.route('/', {
   name: 'LandingPage',
   action() {
-    BlazeLayout.render('master', { content: 'landingPage', sideNav: 'sideNav' });
+    BlazeLayout.render('master', { content: 'landingPage'});
   },
 });
 
 FlowRouter.route('/member', {
   name: 'Member',
   action() {
-    BlazeLayout.render('master', { content: 'memberContent', sideNav: 'sideNav' });
+    BlazeLayout.render('master', { content: 'memberContent'});
   },
 });
 

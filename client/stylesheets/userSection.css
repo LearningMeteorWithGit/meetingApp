@@ -1,0 +1,8 @@
+.userSection{
+  border-style: solid;
+  padding: 10px;
+}
+
+.userSection ul{
+  list-style-type: none;
+}

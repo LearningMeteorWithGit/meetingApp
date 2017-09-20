@@ -1,7 +1,24 @@
 body {
   padding-top: 50px;
 }
+
 .starter-template {
   padding: 40px 15px;
   text-align: center;
+}
+
+.mainContent {
+  border-style: solid;
+  margin: 5%;
+}
+
+.mainContent section{
+  padding: 10px;
+}
+
+.legalFooter{
+  position: fixed;
+  bottom: 0;
+  border-top-style: solid;
+  width: 100%;
 }

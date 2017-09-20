@@ -21,10 +21,15 @@
 }
 
 .clubChat__input{
-  width: 100%;
+  width: 95%;
   float: right;
 }
 
-.clubChat__input input{
+.clubChat__input{
+  float: right;
   width: 95%;
+}
+
+.clubChat__input input[type="text"]{
+  width: 90%
 }

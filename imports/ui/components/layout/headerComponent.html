@@ -13,15 +13,7 @@
           <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
             <ul class="nav navbar-nav navbar-right">
               <li><a href="#">Home</a></li>
-              <li><a href="#">{{> loginButtons}}</a>
-
-
-              {{#if currentUser}}
-                <section class="userSection">
-                  <h3>Hello {{currentUser.username}}! Your private stuff happens here</h3>
-                </section>
-              {{/if}}
-              </li>
+              <li><a href="#">{{> loginButtons}}</a></li>
               <li><a href="#">Hilfe</a></li>
             </ul>
             <form class="navbar-form navbar-right">

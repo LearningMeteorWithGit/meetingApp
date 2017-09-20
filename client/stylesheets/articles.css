@@ -1,0 +1,8 @@
+.articlesSection{
+  border-style: solid;
+}
+
+.article{
+  display: inline-block;
+  padding: 10px;
+}
