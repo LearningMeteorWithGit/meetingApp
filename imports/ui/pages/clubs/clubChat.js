@@ -6,9 +6,9 @@ import { Template } from 'meteor/templating';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
 import { Clubs } from '../../../api/clubs/clubs';
-import { Nachrichten } from '../../../api/nachrichten/nachrichten';
+import { Messages } from '../../../api/messages/messages';
 
-import '../../components/functional/talkBar';
+import '../../components/functional/afType_sendMessage';
 
 
 Template.clubChat.onCreated(function() {
@@ -30,8 +30,11 @@ Template.clubChat.helpers({
   messages(){
     const instance = Template.instance();
     const clubId = instance.getChatroomId();
-    return Nachrichten.find({"chatroomId":instance.getChatroomId()});
+    return Messages.find({"chatroomId":instance.getChatroomId()});
 
+  },
+  messagesCollection(){
+    return Messages;
   }
 });
 

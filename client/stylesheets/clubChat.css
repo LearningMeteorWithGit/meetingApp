@@ -12,24 +12,3 @@
   border-style: solid;
   height: 85%;
 }
-
-.clubChat__message-bar{
-  border-top-style: solid;
-  position: absolute;
-  width: 100%;
-  bottom: 10px;
-}
-
-.clubChat__input{
-  width: 95%;
-  float: right;
-}
-
-.clubChat__input{
-  float: right;
-  width: 95%;
-}
-
-.clubChat__input input[type="text"]{
-  width: 90%
-}

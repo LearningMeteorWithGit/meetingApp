@@ -3,10 +3,10 @@ import SimpleSchema from 'simpl-schema';
 
 SimpleSchema.extendOptions(['autoform']);
 
-export const Nachrichten = new Mongo.Collection("nachrichten");
+export const Messages = new Mongo.Collection("messages");
 Schema = {};
 
-Schema.Nachrichten = new SimpleSchema ({
+Schema.Messages = new SimpleSchema ({
   chatroomId: {
     type: String,
     label: 'Club Id',
@@ -23,15 +23,18 @@ Schema.Nachrichten = new SimpleSchema ({
   },
   content: {
     type: String,
-    label: 'The Message'
+    label: 'Send message'
   },
   sendTime: {
     type: Date,
     label: 'Send time',
+    autoform: {
+      type: 'hidden'
+    },
     autoValue: function autoValueSendTime(){
       return new Date();
     }
   }
 })
 
-Nachrichten.attachSchema(Schema.Nachrichten);
+Messages.attachSchema(Schema.Messages);
